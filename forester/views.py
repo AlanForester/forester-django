@@ -7,6 +7,7 @@ from apps.posts.models import Post
 
 from datetime import date, datetime
 
+
 # Create your views here.
 
 class IndexView(ListView):
@@ -14,6 +15,6 @@ class IndexView(ListView):
     queryset = Post.objects.all().order_by('-created')[:3]
     context_object_name = 'posts_list'  # Default: object_list
 
-    def dateYear():
+    def dateYear(self):
         today = date.today()
         return today.year

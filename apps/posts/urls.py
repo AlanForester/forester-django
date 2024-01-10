@@ -18,7 +18,7 @@ Including another URLconf
 from django.conf.urls import url, include
 
 from .views import PostListView
-from .views import PostCreateView, PostDetailView, PostUptadeView, PostDeleteView
+from .views import PostCreateView, PostDetailView, PostUpdateView, PostDeleteView
 from .views import CommentCreateView, CommentDeleteView, CommentUpdateView
 
 app_name = 'posts'
@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^$', PostListView.as_view(), name='post_list'),
     url(r'^post/add/$', PostCreateView.as_view(), name='post_add'),
     url(r'^post/(?P<pk>\d+)/$', PostDetailView.as_view(), name='post_detail'),
-    url(r'^post/(?P<pk>\d+)/update/$', PostUptadeView.as_view(), name='post_update_form'),
+    url(r'^post/(?P<pk>\d+)/update/$', PostUpdateView.as_view(), name='post_update_form'),
     url(r'^post/(?P<pk>\d+)/delete/$', PostDeleteView.as_view(), name='post_delete'),
     url(r'^post/(?P<pk>\d+)/comment/add/$', CommentCreateView.as_view(), name='comment_add'),
     url(r'^comments/(?P<pk>\d+)/delete/$', CommentDeleteView.as_view(), name='comment_delete'),

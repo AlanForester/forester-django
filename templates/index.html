@@ -1,5 +1,5 @@
 {% extends 'base/base.html' %}
-{% block title %} Pets {% endblock %}
+{% block title %} Forester {% endblock %}
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static 'homepage/css/homepage.css' %}">{% endblock %}
 {% block header %}
@@ -46,7 +46,7 @@
                 {% endif %}
               {% endfor %}
             {% endif %}
-            <h1 class="jumbotron-heading">Pets</h1>
+            <h1 class="jumbotron-heading">Forester</h1>
             <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
             <div class="icons-social-head">
               <ul class="social">
@@ -82,7 +82,7 @@
                         <p class="card-text text-justify">{{ post.description }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="btn-group">
-                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'accounts:signin' %}" role="button">View</a>
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'posts:post_detail' pk=post.id %}" role="button">View</a>
                           </div>
                           <span class="card-date text-muted">{{ post.created|date }}</span>
                         </div>

@@ -61,18 +61,18 @@ class PostDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
-class PostUptadeView(LoginRequiredMixin, UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'posts/post_form.html'  # Default: <app_label>/<model_name>_form.html
 
     def form_valid(self, form):
         if self.request.method == 'POST':
-            return super(PostUptadeView, self).form_valid(form)
+            return super(PostUpdateView, self).form_valid(form)
 
     def form_invalid(self, form):
         if self.request.method == 'POST':
-            return super(PostUptadeView, self).form_invalid(form)
+            return super(PostUpdateView, self).form_invalid(form)
 
     def get_success_url(self):
         return reverse('users:user_detail', kwargs={'slug': self.object.user, })
